@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme>
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
     <title>P-Ticket</title>
 </head>
 
-<body>
-    <header>
-        <div class="navbar bg-base-100">
+<body class=" bg-[#F7F8F8]">
+    <header class="mx-auto px-2 lg:px-40">
+        <div class="navbar bg-base-100  ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -26,40 +32,173 @@
                     </div>
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul class="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Destination</li>
+                        <li>Search</li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl">daisyUI</a>
+                <a class="lg:text-4xl font-bold">P-Ticket</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul class="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Item 3</a></li>
+                    <li class="m-5">Home</li>
+                    <li class="m-5">About</li>
+                    <li class="m-5">Destination</li>
+                    <li class="m-5">Search</li>
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn">Button</a>
+                <a class="btn btn-outline btn-success">Bus<span><img src="./assets/images/bus-icon.png" alt=""
+                            srcset=""></span></a>
             </div>
         </div>
     </header>
-    <main>
+    <main class=" flex flex-col items-center w-full gap-6">
+
+        <!-- banner section  -->
+        <section class="mx-auto px-2 lg:px-40">
+            <div
+                class="py-5 px-10 lg:py-14 lg:px-44 min-w-fit min-h-full lg:min-h-screen bg-cover lg:bg-auto bg-[url('./assets/images/banner.png')] bg-no-repeat text-center flex flex-col gap-0 lg:gap-6 items-center">
+                <h1 class="text-white font-extrabold lg:text-7xl">End-to-End Travel with</h1>
+                <h1 class=" text-[#1DD100] font-extrabold lg:text-7xl">P Paribahan</h1>
+                <p class="text-white text-xs lg:text-xl">
+                    Quickly cut down your bus ticket hassle online. Easy, secure, instant ticket trimming service. Trim
+                    your
+                    bus tickets hassle-free online now.
+                </p>
+                <button class="bg-[#1DD100] btn btn-success lg:text-xl font-bold">Buy Tickets</button>
+            </div>
+        </section>
+
+        <!-- best offer for you -->
+        <section class="mx-auto px-2 lg:px-40 mb-36">
+            <div class="flex flex-col gap-6 items-center">
+                <h1 class="text text-4xl font-bold text-center ">Best offers for you</h1>
+                <!-- coupon  -->
+                <div class="mt-5 flex flex-col lg:flex-row gap-10">
+                    <div
+                        class="flex flex-row bg-[#FFBF0F] lg:w-[573px] h-[220px] rounded-xl bg-[url('./assets/images/cupon-devider.png')] bg-no-repeat bg-[240px] lg:bg-[320px] items-center gap-11 justify-around px-10">
+                        <div class="text-left">
+                            <h1 class="text-2xl lg:text-4xl font-bold">15% OFF</h1>
+                            <h4 class="text-lg lg:text-xl font-bold">on your next purchase</h4>
+                            <p class="text-sm lg:text-lg">use by January 2024</p>
+                        </div>
+                        <div class="text-center">
+                            <h1 class="text-3xl font-bold">NEW15</h1>
+                            <h4 class="text-xl font-medium">Coupon Code</h4>
+                        </div>
+
+                    </div>
+                    <div
+                        class="flex flex-row bg-[#F78C9C] lg:w-[573px] h-[220px] rounded-xl bg-[url('./assets/images/cupon-devider.png')] bg-no-repeat bg-[240px] lg:bg-[320px] items-center gap-11 justify-around px-10">
+                        <div class="text-left">
+                            <h1 class="text-2xl lg:text-4xl font-bold">20% OFF</h1>
+                            <h4 class="text-lg lg:text-xl font-bold">on your next purchase</h4>
+                            <p class="text-sm lg:text-lg">use by January 2024</p>
+                        </div>
+                        <div class="text-center">
+                            <h1 class="text-3xl font-bold">Couple 20</h1>
+                            <h4 class="text-xl font-medium">Coupon Code</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- see all offers button -->
+                <div>
+                    <button class="btn btn-outline btn-success">See All Offers</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ticket counter -->
+        <section class="w-full flex flex-col items-center gap-6 rounded-2xl border-4 border-t-green-400">
+
+            <!-- introductory things -->
+            <div class="text-center text-gray-600 w-2/3 py-20">
+                <!-- title -->
+                <h1 class="text-4xl font-bold text-black mb-4">P.H Paribahan</h1>
+                <!-- description -->
+                <p class="text-lg font-normal">
+                    Quickly cut down your bus ticket hassle online. Easy, secure, instant ticket trimming service. Trim
+                    your
+                    bus tickets hassle-free online now.
+                </p>
+            </div>
+
+            <!-- Car details -->
+            <div class="bg-[#0000000a] w-auto lg:w-[1170px] flex flex-col lg:flex-row justify-around rounded-2xl">
+
+                <!-- route description and information -->
+                <div class="flex flex-col w-auto lg:w-[808px] justify-center">
+
+                    <!-- name seat logo -->
+                    <div class="flex flex-col lg:flex-row gap-6 justify-between items-center">
+                        <!-- name and logo -->
+                        <div class="flex flex-row gap-2">
+                            <img src="./assets/images/bus-logo.png" alt="bus logo">
+                            <div class="flex flex-col">
+                                <h1 class="text text-3xl font-bold">Greenline Paribahan</h1>
+                                <h1 class="text text-lg font-normal text-[#030712]">Coach-009-WEB ! AC_Business</h1>
+                            </div>
+                        </div>
+                        <!-- seat -->
+                        <div class="flex flex-row gap-1 p-2 border-2 border-green-500 rounded-xl bg-[#1cd1002c]">
+                            <img src="./assets/images/seat-green.png" alt="green seat">
+                            <h1 class="text-[#1DD100] font-normal text-lg"><span>40</span> Seats left</h1>
+                        </div>
+                    </div>
+                    <!-- route -->
+                    <div class="w-auto lg:w-[808px] flex flex-col bg-[#F7F8F8] p-4 mt-5 rounded-lg">
+                        <div
+                            class="flex flex-row justify-between border-[#00000037] border-dashed border-2 border-b-2 border-t-0 border-x-0">
+                            <h1 class="text-lg font-semibold text-[#00000061]">Route</h1>
+                            <h1 class="text-lg font-semibold text-black pb-5">Dhaka-Sylhet</h1>
+                        </div>
+
+                        <div
+                            class="flex flex-row justify-between mt-5 border-[#00000037] border-dashed border-2 border-b-2 border-t-0 border-x-0">
+                            <h1 class="text-lg font-semibold text-[#00000061]">Departure Time</h1>
+                            <h1 class="text-lg font-semibold text-black pb-5">9.00 PM</h1>
+                        </div>
+
+                        <div class="flex flex-row justify-between mt-5">
+                            <p class="text-base font-medium bg-[#00000025] text-[#000000d1] rounded-lg p-2">Boarding
+                                Point - Laxmipur</p>
+                            <p class="text-base font-medium bg-[#00000025] text-[#000000d1] rounded-lg p-2">Dropping
+                                Point - Bogura</p>
+                            <p class="text-base font-medium bg-[#00000025] text-[#000000d1] rounded-lg p-2">Est. Time -
+                                11 Hour</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- divider -->
+                <img id="infoDevider" class="" src="./assets/images/info-devider.png" alt="info-devider">
+                <!-- price -->
+                <div class="flex flex-col items-center justify-center">
+                    <img src="./assets/images/fare.png" alt="taka logo">
+                    <h1 class="text-4xl font-bold"><span>550</span> Taka</h1>
+                    <p class="text-gray-700 text-2xl font-semibold">Per Seat</p>
+                </div>
+            </div>
+
+
+            <!-- seat selection and calculation -->
+            <!-- main container -->
+            <div class="bg-[#0000000a] w-auto lg:w-[1170px] flex flex-col lg:flex-row justify-around rounded-2xl">
+                <!-- seat interface -->
+                <div class="flex-1 border-dashed border-y-0 border-l-0 border-r-2 border-[#000006]">
+                    <div class="border-dashed border-t-0 border-x-0 border-b-2 border-[#000006]">
+                        <h1 class="font-semibold text-2xl">Select your seat</h1>
+                    </div>
+                </div>
+                <!-- fair interface -->
+                <div class="flex-1">
+                    <h1 class="font-semibold text-2xl">Select your seat</h1>
+                </div>
+            </div>
+        </section>
 
     </main>
     <footer>
