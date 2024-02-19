@@ -15,24 +15,25 @@ function fairCalculation(seatNumber)
     selectedSeatNumber[selectedSeat] = seatNumber;
     selectedSeat += 1;
     totalPrice += 550;
+
     totalPriceId.innerText=totalPrice
     seatCounter.innerText = selectedSeat;
     grandTotalId.innerText = totalPrice;
+    if(selectedSeat==4)
+    {
+        document.getElementById('couponApply').classList.remove('btn-disabled')
+    }
 
 }
 function elementManipulation(seatNumber)
 {
     numberValue =parseInt(document.getElementById('phoneNumber').value);
-    console.log('seat selection: 1: ',numberValue);
-    console.log('seat number: 1: ',selectedSeatNumber);
     
     if(selectedSeatNumber.length>0 && !isNaN(numberValue)){
-        console.log('seat selection: 2: ',numberValue);
         document.getElementById('nextButton').classList.remove('btn-disabled');
     }
     else{
         document.getElementById('nextButton').classList.add('btn-disabled');
-
     }
     // document.getElementById(seatNumber).classList.add('btn-disabled');
     document.getElementById(seatNumber).classList.replace( 'bg-[#F7F8F8]', 'bg-[#1DD100]');
@@ -54,7 +55,7 @@ function seatSelection(seatNumber) {
 
 function bookSeat(seatNumber) {
     (selectedSeat < 4) ? seatSelection(seatNumber) :
-        console.log('you have reached your limit');
+        console.log('');
 
     console.log('seat selected: ', selectedSeat);
     console.log('Selected Seats: ', selectedSeatNumber);
