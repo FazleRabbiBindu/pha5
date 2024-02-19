@@ -111,7 +111,8 @@
         </section>
 
         <!-- ticket counter -->
-        <section id="ticketCounter" class="mx-auto flex flex-col items-center gap-6 rounded-2xl border-4 border-t-green-400">
+        <section id="ticketCounter"
+            class="mx-auto flex flex-col items-center gap-6 rounded-2xl border-4 border-t-green-400">
 
             <!-- introductory things -->
             <div class="text-center text-gray-600 w-2/3 py-20">
@@ -329,10 +330,24 @@
                             <h1 class="font-medium text-base text-black">Total Price</h1>
                             <h1 class="font-medium text-base text-black">BDT <span id="totalPrice">0</span></h1>
                         </div>
-                        <div class="flex flex-row gap-3 items-center px-3">
-                            <input class="input input-bordered w-full" type="text" name="" id=""
+                        <!-- discount -->
+                        <div id="discountSection" class="hidden mt-5 flex flex-row justify-between">
+                            <h1 class="font-medium text-base text-black">Discount</h1>
+                            <h1 class="font-medium text-base text-black">BDT <span id="discountPrice">0</span></h1>
+                        </div>
+
+                        <div id="couponSection" class="flex flex-row gap-3 items-center px-3">
+                            <input class="input input-bordered w-full" type="text" name="" id="userCouponCode"
                                 placeholder="Have any coupon?">
-                            <button id="couponApply" class="btn btn-disabled btn-success bg-[#1DD100] text-white">Apply</button>
+                            <button onclick="applyCouponCode()" id="couponApply"
+                                class="btn btn-disabled btn-success bg-[#1DD100] text-white">Apply</button>
+                        </div>
+                        <!-- coupon alert -->
+                        <div id="couponCodeAlert" class="hidden">
+                            <div role="alert" class="alert alert-error">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>Wrong Coupon Code</span>
+                              </div>
                         </div>
                         <div class="flex flex-row justify-between">
                             <h1 class="font-medium text-base text-black">Grand Total</h1>
@@ -352,8 +367,8 @@
                             <div class="label">
                                 <span class="label-text font-semibold text-base">Phone Number*</span>
                             </div>
-                            <input id="phoneNumber" onchange="activeNext()" type="text" placeholder="Enter your phone number"
-                                class="input input-bordered w-full" />
+                            <input id="phoneNumber" onchange="activeNext()" type="text"
+                                placeholder="Enter your phone number" class="input input-bordered w-full" />
                         </label>
                         <label class="form-control w-full">
                             <div class="label">
@@ -361,9 +376,10 @@
                             </div>
                             <input type="text" placeholder="Enter your email id" class="input input-bordered w-full" />
                         </label>
-                        
+
                         <!-- modal -->
-                        <button id="nextButton" class="btn btn-success btn-disabled bg-[#1DD100] text-white w-full" onclick="next()">Next</button>
+                        <button id="nextButton" class="btn btn-success btn-disabled bg-[#1DD100] text-white w-full"
+                            onclick="next()">Next</button>
 
                         <dialog id="my_modal_1" class="modal">
                             <div class="modal-box text-center flex flex-col items-center">
@@ -381,17 +397,7 @@
                                 </div>
                             </div>
                         </dialog>
-                        <!-- alert messages -->
-                        <div class="w-full flex flex-col gap-3">
-                            <div id="lowSeat" role="alert" class="w-full alert alert-error hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span>You must select a seat.</span>
-                              </div>
-                            <div id="notPhone" role="alert" class="w-full alert alert-error hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span>You must enter your phone number. Ex: (+8801112222345)</span>
-                              </div>
-                        </div>
+
 
                         <div class="flex flex-row justify-around w-full">
                             <div class="">
@@ -406,7 +412,7 @@
                 </div>
             </div>
         </section>
-        
+
     </main>
     <footer class="bg-[#030712] mx-auto px-2 lg:px-40 py-9 mt-3">
         <div
