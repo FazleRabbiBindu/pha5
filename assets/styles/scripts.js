@@ -53,8 +53,8 @@ function bookSeat(seatNumber) {
     (selectedSeat < 4) ? seatSelection(seatNumber) :
         console.log('');
 
-    console.log('seat selected: ', selectedSeat);
-    console.log('Selected Seats: ', selectedSeatNumber);
+    // console.log('seat selected: ', selectedSeat);
+    // console.log('Selected Seats: ', selectedSeatNumber);
 
 }
 
@@ -105,7 +105,7 @@ function activeNext() {
         document.getElementById('nextButton').classList.add('btn-disabled');
 
     }
-    console.log('ACTIVE NEXT', document.getElementById('phoneNumber').value);
+    // console.log('ACTIVE NEXT', document.getElementById('phoneNumber').value);
 }
 
 function applyCouponCode() {
@@ -133,6 +133,6 @@ function applyCouponCode() {
         unhideEl('couponCode');
     }
 
-    console.log(discount);
+    // console.log(discount);
 
 }
