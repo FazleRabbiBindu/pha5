@@ -87,6 +87,7 @@ function next()
     if(seatsBooked>0 && !isNaN(phoneNumber))
     {
         element.showModal();
+        hideEl('notPhone');
     }
     else{
         (seatsBooked<=0)?unhideEl('lowSeat'):hideEl('lowSeat');
