@@ -4,7 +4,7 @@ var totalPriceId = document.getElementById('totalPrice');
 var grandTotalId = document.getElementById('grandTotal');
 var numberValue = document.getElementById('phoneNumber').value;
 
-var totalSeat = 8;
+var totalSeat = 40;
 var totalPrice = 0;
 var discount = 0;
 var selectedSeat = 0;
