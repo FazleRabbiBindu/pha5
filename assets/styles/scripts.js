@@ -2,6 +2,7 @@ var availableSeats = document.getElementById('availableSeat');
 var seatCounter = document.getElementById('seatCount');
 var totalPriceId = document.getElementById('totalPrice');
 var grandTotalId = document.getElementById('grandTotal');
+var numberValue =document.getElementById('phoneNumber').value;
 
 var totalSeat = 8;
 var totalPrice = 0;
@@ -21,7 +22,18 @@ function fairCalculation(seatNumber)
 }
 function elementManipulation(seatNumber)
 {
-    document.getElementById('nextButton').classList.remove('btn-disabled')
+    numberValue =parseInt(document.getElementById('phoneNumber').value);
+    console.log('seat selection: 1: ',numberValue);
+    console.log('seat number: 1: ',selectedSeatNumber);
+    
+    if(selectedSeatNumber.length>0 && !isNaN(numberValue)){
+        console.log('seat selection: 2: ',numberValue);
+        document.getElementById('nextButton').classList.remove('btn-disabled');
+    }
+    else{
+        document.getElementById('nextButton').classList.add('btn-disabled');
+
+    }
     // document.getElementById(seatNumber).classList.add('btn-disabled');
     document.getElementById(seatNumber).classList.replace( 'bg-[#F7F8F8]', 'bg-[#1DD100]');
 
@@ -32,8 +44,8 @@ function seatSelection(seatNumber) {
     {
         totalSeat = totalSeat - 1;
         availableSeats.innerText = totalSeat;
-        elementManipulation(seatNumber);
         fairCalculation(seatNumber);
+        elementManipulation(seatNumber);
     }
     else{
         unhideEl('seatSelected');
@@ -83,15 +95,31 @@ function next()
     phone = document.getElementById('phoneNumber');
     var phoneNumber = parseInt(phone.value);
     console.log(phoneNumber);
+    element.showModal();
 
-    if(seatsBooked>0 && !isNaN(phoneNumber))
-    {
-        element.showModal();
-        hideEl('notPhone');
+    // if(seatsBooked>0 && !isNaN(phoneNumber))
+    // {
+    //     hideEl('notPhone');
+    // }
+    // else{
+    //     (seatsBooked<=0)?unhideEl('lowSeat'):hideEl('lowSeat');
+
+    //     (isNaN(phoneNumber))?unhideEl('notPhone'):hideEl('notPhone');
+    // }
+}
+
+function activeNext()
+{
+    numberValue =parseInt(document.getElementById('phoneNumber').value);
+
+    if(selectedSeatNumber.length>0 && !isNaN(numberValue)){
+        document.getElementById('nextButton').classList.remove('btn-disabled');
     }
     else{
-        (seatsBooked<=0)?unhideEl('lowSeat'):hideEl('lowSeat');
+        document.getElementById('nextButton').classList.add('btn-disabled');
 
-        (isNaN(phoneNumber))?unhideEl('notPhone'):hideEl('notPhone');
     }
+    console.log('ACTIVE NEXT',document.getElementById('phoneNumber').value);
 }
+
+console.log('phone number',document.getElementById('phoneNumber').value);
